@@ -1,0 +1,66 @@
+table tbody tr td {
+    background-color: #1B1212;
+    color: white;
+    border: none;
+}
+
+table tbody tr , .table-1 thead tr {
+    border: none;
+}
+
+table {
+    width: 50%;
+    border-radius: 7px;
+}
+
+.table-1 {
+    width: 100%;
+}
+
+.table-1 thead tr td {
+    background-color: #1B1212;
+    color: white;
+    border: none;
+}
+
+.cardtitle-1 {
+    width: 25%;
+    font-weight: 700;
+    color: white;
+    border-radius: 9px;
+    margin-bottom: 1rem;
+    background-color: #1B1212;
+}
+
+select {
+    color: white;
+    background-color: #1B1212;
+}
+
+select option {
+    color: white;
+    background-color: #1B1212;
+}
+
+/* .printbtn {
+    margin-left: 50px;
+}
+
+.printbtn button {
+    width: 10%;
+} */
+
+@media (max-width:720px) {
+    table {
+        width: 100%;
+    }
+
+    .table-1 {
+        width: 200%;
+    }
+
+    .cardtitle-1 {
+        width: 100%;
+    }
+
+}

@@ -1,0 +1,109 @@
+:host {
+    display: block;
+    height: 4rem;
+    width: 100%;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    z-index: 20;
+    box-shadow: 0px 0px 25px -3px rgba(0, 0, 0, 0.9);
+}
+
+
+
+nav {
+    background-color: greenyellow;
+}
+
+.navbar-toggler {
+    border: none;
+
+    &:focus {
+        box-shadow: none;
+    }
+}
+
+a {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.form-control {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.dropdown-menu {
+    top: 100%;
+    left: auto;
+    margin-top: var(--bs-dropdown-spacer);
+}
+
+.nav-item ul {
+    background-color: greenyellow;
+    border: none;
+}
+
+.nav-item ul li {
+    color: black;
+    text-align: start;
+    margin-left: 12px;
+}
+
+.nav-item ul li a {
+    color: #343434;
+    font-size: 15px;
+    font-weight: 600;
+
+    &:hover {
+        color: black;
+        background-color: white;
+    }
+}
+
+.nav-link {
+    color: black;
+
+    &:hover {
+        color: white;
+        transition: 0.3s;
+    }
+}
+
+.dropdown-menu li {
+    width: 94%;
+    margin-right: 10px;
+}
+
+.dropdown-menu li a {
+    width: 94%;
+}
+
+.dropdown-divider {
+    background-color: black;
+}
+
+.modal {
+    backdrop-filter: blur(9px);
+    align-content: center;
+}
+
+.badge {
+    font-size: 0.80em;
+}
+
+
+
+/* .modal-header {
+    border-color: greenyellow;
+}  */
+
+/* .modal-content {
+    background-color: #1B1212;
+    color: greenyellow;
+    border: 1px solid greenyellow;
+} */
+
+/* .btn-close {
+    background-color: greenyellow; 
+} */

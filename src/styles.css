@@ -1,0 +1,76 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* @import 'ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default'; */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #000000;
+    /* background-image: linear-gradient(147deg, #000000 0%, #2c3e50 74%); */
+
+}
+
+.font-cinzel {
+    font-family: 'cinzel', serif;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.my-container {
+    max-width: 95%;
+}
+
+.my-shadow {
+    border: none;
+    box-shadow: 0px 0px 25px -3px rgba(0, 0, 0, 0.9);
+}
+
+.my-shadow-1 {
+    border: none;
+    box-shadow: rgba(149, 157, 165, 0.3) 0px 8px 24px;
+}
+
+.my-rounded-corner {
+    border-radius: 1rem;
+}
+
+.round-corner-9 {
+    border-radius: 9px;
+}
+
+
+.body-background {
+    border: none;
+    background-color: #1d1e22;
+}
+
+.silverfoxbg { 
+    border: none;
+    background-color: #d4d4dc;
+}
+
+.dmgreybg {
+    border: none;
+    background-color: #393f4d;
+}
+
+.yellowbg {
+    border: none;
+    background-color: #feda6a;
+}
+
+.whitebg {
+    border: none;
+    background-color: white;
+}
+
+.licoricebg {
+    border: none;
+    background-color: #1B1212;
+}
+
+.modal-backdrop.fade.show {
+    z-index: 19;
+}
+

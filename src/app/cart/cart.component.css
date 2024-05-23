@@ -1,0 +1,181 @@
+table tbody tr td {
+    background-color: #1B1212;
+    color: white;
+    border: none;
+}
+
+table tbody tr {
+    border: none;
+}
+
+table {
+    width: 50%;
+    border-radius: 7px;
+}
+
+.carttitle {
+    width: 20%;
+    color: white;
+    border-radius: 7px;
+    font-weight: 700;
+    background-color: #1B1212;
+}
+
+.cardtitle-1 {
+    width: 25%;
+    color: white;
+    border-radius: 7px;
+    font-weight: 700;
+    background-color: #1B1212;
+}
+
+.current-cart-items {
+    width: 75%;
+}
+
+.time {
+    font-size: 15px;
+}
+
+.time span {
+    font-size: 18px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.count {
+    font-size: 15px;
+    /* overflow: hidden; */
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-left: -36%;
+}
+
+.count span {
+    font-size: 18px;
+}
+
+.price {
+    font-size: 15px;
+    overflow: hidden;
+    /* text-overflow: ellipsis; */
+    /* white-space: nowrap; */
+}
+
+.price span {
+    font-size: 18px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#printbtn {
+    /* margin-left: 1%; */
+    padding: 0px 40px 20px;
+}
+
+#printbtn button {
+    width: 18%;
+    margin: 10px;
+}
+
+#printbtn button i {
+    margin-right: 7px;
+}
+
+.print-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    color: greenyellow;
+}
+
+.card-body {
+    margin-top: 10px;
+}
+
+@media (max-width:720px) {
+    table {
+        width: 90%;
+    }
+
+    .current-cart-items {
+        width: 100%;
+    }
+
+    .current-cart-items .col-6,
+    .current-cart-items h4,
+    .cardtitle-1 {
+        width: 100%;
+    }
+
+    .card-body .row .col-2 {
+        width: 50%;
+    }
+
+    .prev-card-head {
+        gap: 18px;
+    }
+
+    .time {
+        font-size: 12px;
+    }
+
+    .time span {
+        font-size: 14;
+    }
+
+    .count {
+        font-size: 12px;
+        display: none;
+    }
+
+    .price {
+        font-size: 12px;
+        margin-left: 15%;
+    }
+
+    .price span {
+        font-size: 14;
+    }
+
+    #printbtn {
+        margin-left: 1%;
+        padding: 0px 10px 7px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    #printbtn button {
+        width: 60%;
+        font-size: 15px;
+    }
+
+    #printbtn button i {
+        margin-right: 3px;
+    }
+
+}
+
+@media print {
+
+    /* Hide the print button when printing */
+    button {
+        display: none !important;
+    }
+
+    .print-header {
+        margin-bottom: 30px !important;
+    }
+
+    .print-header span {
+        width: 10% !important;
+    }
+
+    .app-product {
+        width: 10%;
+    }
+}

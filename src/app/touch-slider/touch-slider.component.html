@@ -1,0 +1,54 @@
+<!-- <div class="slider-container">
+    <div class="slider-item" *ngFor="let sliderimage of sliderimages; let i= index" 
+    [ngClass]="{
+        'selected': i == selectedIndex, 
+        'prev': i == selectedIndex -1, 
+        'next': i == selectedIndex +1, 
+        'hideleft': i < selectedIndex -1,
+        'hideright': i > selectedIndex +1
+        }">
+
+        <img [src]="sliderimage.imgSrc" [alt]="sliderimage.imgAlt" class="slider-img" (panright)="showPrev(i)" (panleft)="showNext(i)">
+    </div>
+</div> -->
+
+
+<!-- Carousel -->
+<div id="touch-slider" class="carousel slide" data-bs-ride="carousel">
+
+    <!-- Indicators/dots -->
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#touch-slider" data-bs-slide-to="0" class="active"></button>
+      <button type="button" data-bs-target="#touch-slider" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#touch-slider" data-bs-slide-to="2"></button>
+      <button type="button" data-bs-target="#touch-slider" data-bs-slide-to="3"></button>
+      <button type="button" data-bs-target="#touch-slider" data-bs-slide-to="4"></button>
+    </div> 
+    
+    <!-- The slideshow/carousel -->
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="/assets/img/Slider/Slider-1.jpg" alt="Jewellery" class="d-block" style="width:100%">
+      </div>
+      <div class="carousel-item">
+        <img src="/assets/img/Slider/Slider-2.jpg" alt="Jewellery" class="d-block" style="width:100%">
+      </div>
+      <div class="carousel-item">
+        <img src="/assets/img/Slider/Slider-3.jpg" alt="Jewellery" class="d-block" style="width:100%">
+      </div>
+      <div class="carousel-item">
+        <img src="/assets/img/Slider/Slider-4.jpg" alt="Jewellery" class="d-block" style="width:100%">
+      </div>
+      <div class="carousel-item">
+        <img src="/assets/img/Slider/Slider-5.jpg" alt="Jewellery" class="d-block" style="width:100%">
+      </div>
+    </div>
+    
+    <!-- Left and right controls/icons -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#touch-slider" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#touch-slider" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>

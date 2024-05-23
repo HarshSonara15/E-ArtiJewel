@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="content">
+        <div class="left-side">
+            <div class="address details">
+                <i class="fas fa-map-marker-alt"></i>
+                <div class="topic text-warning">Address</div>
+                <div class="text-two text-white">Jivraj Park, Ahmedabad</div>
+            </div>
+            <div class="phone details">
+                <i class="fas fa-phone"></i>
+                <div class="topic text-warning">Phone</div>
+                <div class="text-one text-white">+91-1234567890</div>
+            </div>
+            <div class="email details">
+                <i class="fas fa-envelope"></i>
+                <div class="topic text-warning">Email</div>
+                <div class="text-one text-white">EArtiJewel&#64;gmail.com</div>
+            </div>
+        </div>
+        <div class="right-side">
+            <div class="topic-text">Send us a message</div>
+            <p class="text-white">If you have any problem related to website or any types of queries related to product,
+                you can send me message from
+                here. It's my pleasure to help you.</p>
+            <form #messageForm="ngForm" (ngSubmit)="submitmsg()">
+                <div class="input-box">
+                    <input type="text" placeholder="Enter your email" [formControl]="emailcontrol">
+                </div>
+                <div class="input-box message-box">
+                    <input type="text" placeholder="Your Message" [formControl]="contactmsgControl">
+                </div>
+                <div class="button">
+                    <input type="submit" class="btn btn-outline-warning" value="Send Now">
+                </div>
+            </form>
+            <div class="mt-3">
+                <h6 class="text-danger mt-4" *ngIf="!utilityService.isLoggedIn()">Login First, then enter the review
+                </h6>
+                <h6 class="text-danger" *ngIf="showError"> Message cannot be Empty</h6>
+                <h6 class="text-warning" *ngIf="msgSent"> Message Sent Successfully!</h6>
+            </div>
+        </div>
+    </div>
+</div>

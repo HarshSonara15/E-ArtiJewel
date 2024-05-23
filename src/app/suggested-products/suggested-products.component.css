@@ -1,0 +1,27 @@
+:host {
+    display: block;
+}
+
+.suggested-product {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.suggested-product-sub {
+    width: 25%;
+}
+
+
+@media (max-width : 720px) {
+    .suggested-product {
+        display: block;
+        width: 100%; 
+        padding: 1.5rem;
+    }
+
+    .suggested-product-sub {
+        width: 100%;
+        margin-top: 3rem;
+    }
+}

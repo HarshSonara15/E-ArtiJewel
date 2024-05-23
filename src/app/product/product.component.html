@@ -1,0 +1,160 @@
+<div class="grid-view" *ngIf="view=='grid'">
+    <div class="card text-center">
+        <div class="card-header fw-bold fs-5 text-white">
+            {{product.productCategory.category}}
+        </div>
+
+        <div class="overflow-hidden d-flex justify-content-center align-items-center">
+            <img src="/assets/Product-Images/{{product.productCategory.category}}/{{product.productCategory.subCategory}}/{{product.id}}/1.jpg"
+                alt="" class="card-img-top" OpenProductDetails [productId]="product.id">
+        </div>
+
+        <div class="card-body">
+            <h5 class="card-title title text-white"> {{product.title}} </h5>
+            <h6 class="card-subtitle my-2 text-primary"> {{product.quantity}} Products are available.</h6>
+            <p class="card-text description text-white"> {{product.description}} </p>
+        </div>
+
+        <div class="card-body">
+            <h5 class="card-title text-success"> {{utilityService.applyDiscount(product.price, product.offer.discount)}}
+                <span class="text-primary">
+                    -{{product.offer.discount}}%
+                </span>
+            </h5>
+            <h6 class="card-subtitle text-danger text-decoration-line-through">
+                {{product.price}}
+            </h6>
+        </div>
+
+        <div class="card-footer d-grid gap-2 mb-3">
+            <button type="button" class="btn btn-outline-warning" [disabled]="!utilityService.isLoggedIn()"
+                (click)="this.utilityService.addToCart(product)">
+                <i class="fas fa-cart-plus me-1"></i> Add to Cart
+                <span *ngIf="!utilityService.isLoggedIn()">(Login First)</span>
+            </button>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- New Design  -->
+<!-- <div class="grid-view" *ngIf="view=='grid'">
+    <div class="card border-0 shadow">
+        <div class="card-header bg-dark text-white text-center fw-bold fs-5">
+            Product Name
+        </div>
+
+        <div class="overflow-hidden d-flex justify-content-center align-items-center">
+            <img src="/assets/Product-Images/{{product.productCategory.category}}/{{product.productCategory.subCategory}}/{{product.id}}/1.jpg" alt="Product Image" class="card-img-top" OpenProductDetails [productId]="product.id">
+        </div> 
+
+        <div class="card-body">
+            <h5 class="card-title title text-center text-white mb-0"> {{product.title}} </h5>
+            <h6 class="card-subtitle my-2 text-primary"> {{product.quantity}} products are available. </h6>
+            <p class="card-text description text-center text-success mb-2"> {{product.description}}</p>
+        </div>
+
+        <div class="card-footer bg-dark text-white">
+            <div class="d-flex justify-content-between align-items-center flex-column flex-md-row">
+                <div class="mb-2 mb-md-0">
+                    <h5 class="card-title text-white mb-1"> {{utilityService.applyDiscount(product.price, product.offer.discount)}} </h5>
+                    <span class="text-primary mb-1">
+                        -{{product.offer.discount}}%
+                    </span>
+                    <h6 class="card-subtitle text-danger text-decoration-line-through mb-0"> {{product.price}}  </h6>
+                </div>
+                <button class="btn btn-outline-warning"><i class="fas fa-cart-plus me-1"></i>Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</div> -->
+<!-- New Design  -->
+
+
+<div class="list-view" *ngIf="view== 'list'">
+    <div class="card">
+        <div class="row">
+            <div class="col-md-4 overflow-hidden d-flex justify-content-center align-items-center imgrow">
+                <img src="/assets/Product-Images/{{product.productCategory.category}}/{{product.productCategory.subCategory}}/{{product.id}}/1.jpg"
+                    class="img-fluid rounded" alt="Product Image" OpenProductDetails [productId]="product.id">
+            </div>
+            <div class="col d-flex  flex-column">
+                <div class="card-header text-center text-white fw-bold fs-5">
+                    {{product.productCategory.category}}
+                </div>
+
+                <div class="card-body">
+                    <h3 class="card-title title text-white"> {{product.title}} </h3>
+                    <p class="card-text description text-white fs-5"> {{product.description}} </p>
+                    <h6 class="card-subtitle mb-3 text-primary"> {{product.quantity}} products are available.</h6>
+                </div>
+
+                <div class="card-body">
+                    <h4 class="card-title text-warning">Pricing</h4>
+                    <h2 class="card-title text-white">
+                        {{utilityService.applyDiscount(product.price, product.offer.discount)}}
+                        <span class="text-primary"> -{{product.offer.discount}}% </span>
+                    </h2>
+                    <h5 class="card-subtitle text-danger text-decoration-line-through">
+                        {{product.price}}
+                    </h5>
+                </div>
+
+                <div class="card-footer text-muted d-grid gap-2 mb-3">
+                    <button type="button" class="btn btn-outline-warning" [disabled]="!utilityService.isLoggedIn()"
+                        (click)="this.utilityService.addToCart(product)">
+                        <i class="fas fa-cart-plus me-1"></i> Add to Cart
+                        <span *ngIf="!utilityService.isLoggedIn()">(Login First)</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Cart Item View  -->
+<div class="cart-item-view" *ngIf="view == 'currentcartitem'">
+    <div class="card">
+        <div class="row g-0">
+            <div class="col-4">
+                <div class="col overflow-hidden d-flex justify-content-center align-items-center">
+                    <img src="/assets/Product-Images/{{product.productCategory.category}}/{{product.productCategory.subCategory}}/{{product.id}}/1.jpg"
+                        class="img-fluid rounded" alt="Product Image" OpenProductDetails [productId]="product.id">
+                </div>
+            </div>
+            <div class="col-8">
+                <div class="card-body">
+                    <h5 class="card-title title text-white my-2"> {{product.title}} </h5>
+                    <h5 class="card-title text-success"> {{utilityService.applyDiscount(product.price,
+                        product.offer.discount)}}
+                        <span class="text-primary"> -{{product.offer.discount}}%
+                        </span>
+                    </h5>
+                    <h6 class="card-subtitle text-danger text-decoration-line-through"> {{product.price}} </h6>
+                </div>
+
+                <div class="card-footer text-muted d-grid gap-2">
+                    <button class="btn btn-outline-danger" type="button" (click)="this.utilityService.removePfC(product)"> <i class="fa-solid fa-trash-can"></i>
+                        Remove from Cart
+                    </button> 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Previous Cart Item -->
+<div class="cart-item-view" *ngIf="view == 'previouscartitem'">
+    <div class="card text-center">
+        <div class="overflow-hidden d-flex justify-content-center align-items-center">
+            <img src="/assets/Product-Images/{{product.productCategory.category}}/{{product.productCategory.subCategory}}/{{product.id}}/1.jpg"
+                class="card-img-top" alt="Product Image" OpenProductDetails [productId]="product.id">
+        </div>
+
+        <div class="card-body"> 
+            <h5 class="card-title title text-white"> {{product.title}} </h5>
+        </div>
+    </div>  
+</div>

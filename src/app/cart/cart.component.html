@@ -1,0 +1,77 @@
+<div class="my-container mx-auto">
+    <div class="p-4 my-rounded-corner">
+        <h3 class="cardtitle-1 text-center py-2 mb-5 my-shadow">Current Cart</h3>
+        <div class="mt-5 mb-5">
+            <div class="d-grid w-50 mx-auto mb-3">
+                <button class="btn btn-outline-warning fs-4" type="button" routerLink="/orders"> Order </button>
+            </div>
+            <table class="table mx-auto table-bordered table-hover my-shadow">
+                <tbody>
+                    <tr>
+                        <td>Total Items</td>
+                        <td class="fs-5 fw-bold text-warning"> {{usersCart.cartItems.length}} </td>
+                    </tr>
+                    <tr>
+                        <td>Total Price</td>
+                        <td class="fs-5 fw-bold text-warning"> {{usersPaymentInfo.totalAmount}} </td>
+                    </tr>
+                    <tr>
+                        <td>Shipping Charges</td>
+                        <td class="fs-5 fw-bold text-warning"> {{usersPaymentInfo.shipingCharges}} </td>
+                    </tr>
+                    <tr>
+                        <td>Discount</td>
+                        <td class="fs-5 fw-bold text-warning"> {{usersPaymentInfo.amountReduced}} </td>
+                    </tr>
+                    <tr>
+                        <td>You have to Pay </td>
+                        <td class="fs-5 fw-bold text-warning"> {{usersPaymentInfo.amountPaid}} </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <hr>
+
+        <div class="current-cart-items mx-auto mt-5">
+            <h4 class="carttitle text-center py-2 my-shadow">Cart Items</h4>
+            <div class="row mt-4 g-0">
+                <div class="col-6 py-3 px-2" *ngFor="let cartItem of usersCart.cartItems">
+                    <app-product [view]="'currentcartitem'" [product]="cartItem.product"> </app-product>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="mt-5 p-4 my-rounded-corner ">
+        <h3 class="cardtitle-1 text-center py-2 mb-5 my-shadow">Previous Cart</h3> 
+
+        <div class="card mb-5 licoricebg my-shadow" *ngFor="let cart of usersPreviousCarts" id="printTable{{cart.id}}">
+            <!-- <div class="card-header prev-card-head d-flex fw-bold justify-content-between align-items-center text-warning print-header"> -->
+            <div class="card-header print-header">
+                <span class="time">Ordered On : <span> {{cart.orderedOn | date:"dd-MMM-YYYY"}} </span> </span>
+                <span class="count">Items: <span> {{cart.cartItems.length}} </span> </span>
+                <span class="price">Price Paid: <span> {{utilityService.calculatePricePaid(cart)}} </span> </span>
+            </div>
+
+            <div class="card-body px-4 py-2 licoricebg">
+                <div class="row g-0">
+                    <div class="col-2 px-2 py-2 " *ngFor="let cartItem of cart.cartItems">
+                        <app-product [view]="'previouscartitem'" [product]="cartItem.product"></app-product>
+                    </div>
+                </div>
+            </div>
+
+            <div id="printbtn">
+                        <button class="btn btn-outline-warning" (click)="generatePDF('download',cart.id)">
+                            <i class="fa-solid fa-download"></i> Download Invoice
+                </button>
+                <button class="btn btn-outline-warning" (click)="generatePDF('open',cart.id)">
+                    <i class="fa-regular fa-folder-open"></i> Open Invoice
+                </button> 
+            </div>
+        </div>
+    </div>
+</div>

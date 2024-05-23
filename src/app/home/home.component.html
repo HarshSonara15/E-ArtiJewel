@@ -1,0 +1,181 @@
+<div class="my-container mx-auto">
+
+    <!-- <div class="slide-animation">
+<app-touch-slider [sliderimages]="sliderimages" /> -->
+    <!-- <app-touch-slider /> -->
+    <!-- </div> -->
+
+    <!-- Hero Start  -->
+    <div class="container-fluid hero-header">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6 text-center text-lg-start">
+                    <h3 class="fw-light text-white fw-bolder"> Luxury for Life</h3>
+                    <h1 class="display-4 text-white fw-bold"> Our <span
+                            class="fw-light text-warning fw-bold">Jewellery</span>
+                        Will Enhance Your Status
+                    </h1>
+                    <p class="text-white mb-4 fw-normal">
+                        Our jewelry is made by the finest artists and carefully selected to reflect your Style and
+                        Personality.
+                        Every piece is a Unique, One-of-a-kind Masterpiece.
+                    </p> 
+                    <button class="btn btn-outline-warning py-2 px-4 me-3 fw-bold" routerLink="/products">Shop
+                        Now </button>
+                    <button href="" class="btn btn-outline-warning py-2 px-4 fw-bold" routerLink="/contactus">Contact
+                        Us</button>
+                </div>
+
+                <div class="col-lg-6">
+                    <img class="img-fluid" src="/assets/img/Slider/Slider-1.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Hero End -->
+
+    <div class="mb-4 my-shadow my-rounded-corner overflow-hidden" *ngFor="let suggestedProduct of suggestedProducts; let i = index;">
+
+        <div class="product-banner position-relative">
+            <button type="button" class="btn btn-outline-light btn-lg"> Shop Now</button>
+            <img src="/assets/img/{{suggestedProduct.banerimage}}" class="w-100" alt="Banner Image">
+        </div>
+
+        <hr class="break">
+
+        <div class="product-list py-5">
+            <app-suggested-products [category]="suggestedProduct.category" />
+        </div>
+
+        <div class="border-break" *ngIf="i !== suggestedProducts.length - 1">
+            <img src="/assets/img/svg/Line-Design.svg" alt="">
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+<!-- <div class="my-container mx-auto"> -->
+<!-- Hero Start  -->
+<!-- <div class="container-fluid hero-header">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6 text-center text-lg-start">
+                    <h3 class="fw-light text-white fw-bolder"> Luxury for Life</h3>
+                    <h1 class="display-4 text-white fw-bold"> Our <span class="fw-light text-warning fw-bold">Jewellery</span>
+                        Will Enhance Your Status
+                    </h1>
+                    <p class="text-white mb-4 fw-normal">
+                        Our jewelry is made by the finest artists and carefully selected to reflect your Style and
+                        Personality.
+                        Every piece is a Unique, One-of-a-kind Masterpiece.
+                    </p> 
+                    <button class="btn btn-outline-warning py-2 px-4 me-3 fw-bold" routerLink="/products">Shop Now</button>
+                    <button href="" class="btn btn-outline-warning py-2 px-4 fw-bold" routerLink="/contactus">Contact Us</button>
+                </div>
+
+                <div class="col-lg-6">
+                    <img class="img-fluid" src="/assets/img/Slider/Slider-1.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div> -->
+<!-- Hero End -->
+
+<!-- <div class="border-break">
+        <img src="/assets/img/svg/Line-Design.svg" alt="">
+    </div>  -->
+
+<!-- Diamond Section -->
+<!-- <div class="container-fluid"> 
+        <div class="container diamond-section">
+            <h2 class="diamond-section-header text-center fs-1 fw-bold"> Diamond Collection </h2>
+            <div class="row align-items-center">
+                <div class="col-lg-6 diamond-section-left">
+                    <app-carousel /> 
+                </div>
+                <div class="col-lg-6 diamond-section-right">
+                    <div class="diamond-section-title fs-3 fw-bold">
+                        Diamond
+                    </div>
+                    <div class="diamond-section-content">
+                        <p>“Angels are like diamonds. They can't be made. You have to find them. Each one is unique.”
+                            <span style="font-weight: 600;"> - Jaclyn Smith </span>
+                        </p>
+                        <p>
+                            A diamond is a chunk of coal that is made good under pressure.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+<!-- Diamond Section Ends Here  -->
+
+<!-- <div class="border-break">
+        <img src="/assets/img/svg/Line-Design.svg" alt="">
+    </div> -->
+
+<!-- Gold Section Starts Here  -->
+<!-- <div class="container-fluid">
+        <div class="container gold-section">
+            <h2 class="gold-section-header text-center fs-1 fw-bold"> Gold Collection </h2>
+            <div class="row align-items-center">
+                <div class="col-lg-6 gold-section-left">
+                    <div class="gold-section-title fs-3 fw-bold text-warning">
+                        Gold
+                    </div>
+                    <div class="gold-section-content">
+                        <p>“Angels are like diamonds. They can't be made. You have to find them. Each one is unique.”
+                            <span style="font-weight: 600;"> - Jaclyn Smith </span>
+                        </p>
+                        <p>
+                            A diamond is a chunk of coal that is made good under pressure.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-6 gold-section-right">
+                    <app-carousel />
+                </div>
+            </div>
+        </div>
+    </div> -->
+<!-- Gold Section Ends Here  -->
+
+<!-- <div class="border-break">
+        <img src="/assets/img/svg/Line-Design.svg" alt="">
+    </div> -->
+
+<!-- Silver Section Starts Here   -->
+<!-- <div class="container-fluid mb-5">
+        <div class="container silver-section">
+            <h2 class="silver-section-header text-center fs-1 fw-bold"> Silver Collection </h2>
+            <div class="row align-items-center">
+                <div class="col-lg-6 silver-section-left">
+                    <app-carousel />
+                </div>
+                <div class="col-lg-6 silver-section-right">
+                    <div class="silver-section-title fs-3 fw-bold">
+                        Silver
+                    </div>
+                    <div class="silver-section-content">
+                        <p>“Angels are like diamonds. They can't be made. You have to find them. Each one is unique.”
+                            <span style="font-weight: 600;"> - Jaclyn Smith </span>
+                        </p>
+                        <p>
+                            A diamond is a chunk of coal that is made good under pressure.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+<!-- Silver Section Ends Here  -->
+
+
+<!-- </div> -->

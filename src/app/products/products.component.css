@@ -1,0 +1,22 @@
+.product-content {
+    width: 100%;
+    padding: 1rem;
+}
+
+@media (max-width:720px) {
+    .btn-group {
+        display: contents;
+    }
+
+    .btn-group button {
+        font-size: 10px;
+    } 
+
+    span {
+        margin-left: 10%;
+    }
+
+    .grid-view .row .col-3 {
+        width: 50%;
+    }
+}
