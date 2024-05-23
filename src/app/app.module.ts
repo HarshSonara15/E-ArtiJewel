@@ -64,17 +64,30 @@ import { OurServicesComponent } from './our-services/our-services.component';
     FormsModule,
     BrowserAnimationsModule,
     CarouselModule,
+    // JwtModule.forRoot({
+    //   config: {
+    //     tokenGetter:() => {
+    //       return localStorage.getItem('user');
+    //     },
+    //     allowedDomains: ['https://localhost:7268'],
+    //   },
+    // }),
     JwtModule.forRoot({
       config: {
         tokenGetter:() => {
-          return localStorage.getItem('user');
+          if (typeof localStorage !== 'undefined') {
+            return localStorage.getItem('user');
+          } else {
+            return null;
+          }
         },
-        allowedDomains: ['https://localhost:7268'],
+        allowedDomains: ['localhost:5124'],
       },
     }),
+
   ],
   providers: [
-  // provideClientHydration(),
+   provideClientHydration(),
   // provideAnimations(),
     provideHttpClient(withFetch()),
   ],

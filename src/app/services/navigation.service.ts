@@ -9,7 +9,8 @@ import { FormControl } from '@angular/forms';
 })
 export class NavigationService {
 
-  baseUrl = "https://localhost:7268/api/Shopping/";
+  // baseUrl = "https://localhost:7268/api/Shopping/";
+  baseUrl = "http://localhost:5124/api/Shopping/";
 
   constructor(private http: HttpClient) { } 
 

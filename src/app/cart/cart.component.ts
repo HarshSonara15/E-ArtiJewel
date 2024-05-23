@@ -116,7 +116,7 @@ export class CartComponent implements OnInit {
     const userprecart = this.usersPreviousCarts;
     const userpayment = this.usersPaymentInfo;
     const preCart = this.previousCarts();
-    let printContents = document.getElementById('printTable' + cartId)!.cloneNode(true) as HTMLElement;
+    // let printContents = document.getElementById('printTable' + cartId)!.cloneNode(true) as HTMLElement;
 
     const cart = userprecart.find(cart => cart.id === cartId);
 

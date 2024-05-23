@@ -36,16 +36,32 @@ export class UtilityService {
     return user;
   }
 
-  setUser(token: string) {
-    localStorage.setItem('user', token);
-  }  
+  // setUser(token: string) {
+  //   localStorage.setItem('user', token);
+  // }  
 
-  isLoggedIn() {
-    return localStorage.getItem('user') ? true : false;
+  // isLoggedIn() {
+  //   return localStorage.getItem('user') ? true : false;
+  // }
+
+  // logoutUser() {
+  //   localStorage.removeItem('user');
+  // }
+
+  setUser(token: string) { 
+    if (typeof localStorage !== 'undefined') {
+      localStorage.setItem('user', token);
+    }
+  }
+
+  isLoggedIn(): boolean {
+    return typeof localStorage !== 'undefined' && localStorage.getItem('user') !== null;
   }
 
   logoutUser() {
-    localStorage.removeItem('user');
+    if (typeof localStorage !== 'undefined') {
+      localStorage.removeItem('user');
+    }
   }
 
   addToCart(product: Product) {

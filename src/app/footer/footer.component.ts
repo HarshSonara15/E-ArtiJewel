@@ -9,8 +9,9 @@ import { Router } from '@angular/router';
 export class FooterComponent {
 
   constructor(private router: Router ){}
-  homepage() {
+   homepage() {
     this.router.navigateByUrl('/home');
-    window.scrollTo(0, 0); 
-  } 
+    // window.scrollTo(0, 0); 
+    document.documentElement.scrollTop = 0;
+   } 
 }
