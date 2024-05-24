@@ -81,7 +81,7 @@ import { OurServicesComponent } from './our-services/our-services.component';
             return null;
           }
         },
-        allowedDomains: ['localhost:5124'],
+        allowedDomains: ['http://localhost:5124'],
       },
     }),
 
